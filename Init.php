@@ -2,10 +2,11 @@
 include('loaddata.php');
     include('Network.php');
     $myNet = new Network([9,11,9], [false,false,false]);
+    for($j=0;$j<500;$j++){
     for($i=0;$i<count($X);$i++){
-        $myNet ->train($X[$i],$X[$i],0.2);
+        $myNet ->train($X[$i],$X[$i],0.3);
     }
-    
+    }
     $filename = 'data.txt';
     // The content to write to the file
     $content = $myNet->getWeight();
