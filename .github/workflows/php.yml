@@ -20,10 +20,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1'  # Specify the PHP version you need
-        tools: composer
 
-    - name: Install dependencies
-      run: composer install
 
     - name: Run PHP script
       run: php Init.php  # Replace with the path to your PHP script
