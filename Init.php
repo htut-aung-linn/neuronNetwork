@@ -4,7 +4,7 @@ include('loaddata.php');
     $myNet = new Network([9,11,9], [false,false,false]);
     for($j=0;$j<500;$j++){
     for($i=0;$i<count($X);$i++){
-        $myNet ->train($X[$i],$X[$i],0.3);
+        $myNet ->train($X[$i],$y[$i],0.5);
     }
     }
     $filename = 'data.txt';
