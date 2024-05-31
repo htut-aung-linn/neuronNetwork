@@ -139,8 +139,27 @@ class Network{
         echo "<pre>";
         var_dump($this->network);
     }
+    function setWeight($inputString) { 
+    $layers = explode('?', trim($inputString, '?')); 
+    //$this->network = [];
+    $layercount=0;
+    foreach ($layers as $layerString) 
+    { 
+    $layer = [];
+    $cells = explode('/', trim($layerString, '/'));
+    $cellcount =0; 
+        foreach ($cells as $cellString) { 
+    $weights = array_map('floatval', explode(',', trim($cellString, ','))); 
+    //var_dump($this->network);
+   $this->network[$layercount][$cellcount]->weight = $weights; 
+    $cellcount++;
+    }
+    $layercount++; 
+    } 
+    
+    }
 }
-
+/*
 $myNet = new Network([2,2,3], [false,true,false]);
 //$myNet ->forward([0,1]);
 //$myNet ->print();
@@ -163,7 +182,7 @@ $myNet ->print();
 echo "<hr>";
 $myNet ->forward([1,1]);
 $myNet ->print();
-var_dump($myNet->getWeight());
+var_dump($myNet->getWeight());*/
 
 //$myNet ->forwardWithWeight([0,0], 
 //"?/,-1.7383216197993,5.4267221819295,-3.5980568858604/,-3.7860643056909,-2.3765225145538,4.9657881831355?/,-7.6553195083611,-3.3758516386185,9.7897009066497,-1.136034700029/,5.9930094193469,-6.9197998722929,2.2697793321804,5.7594865615907/,-3.676897452525,3.7943567178836,-6.4375731873223,3.2407363078061?////"
