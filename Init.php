@@ -9,7 +9,7 @@ include('loaddata.php');
     $filename = 'data.txt';
     // The content to write to the file
     $content = $myNet->getWeight();
-    
+    var_dump($content);
     // Using the file_put_contents function to write content to the file
     file_put_contents($filename, $content);
     
