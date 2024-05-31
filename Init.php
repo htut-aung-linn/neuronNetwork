@@ -6,7 +6,7 @@ $myNet->setWeight('?/,55.378151905869,8.1155148575569,4.8935810111701,10.4455463
 
     for($j=0;$j<10;$j++){
     for($i=0;$i<count($X);$i++){
-        $myNet ->train($X[$i],$y[$i],0.5);
+        $myNet ->train($X[$i],$y[$i],10);
     }
     }
     $filename = 'data.txt';
