@@ -3,7 +3,7 @@
 // Function to convert the best move to a one-hot encoded vector
 function oneHotEncodeMove($move, $numClasses = 9) {
     $oneHot = array_fill(0, $numClasses, 0);
-    $oneHot[$move] = 1;
+    $oneHot[$move] = 1/2;
     return $oneHot;
 }
 
