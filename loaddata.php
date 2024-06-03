@@ -1,9 +1,16 @@
 <?php
 
+// Function to normalize the board state
+function normalizeBoardState($boardState) {
+    return array_map(function($val) {
+        return $val / 2.0;
+    }, $boardState);
+}
+
 // Function to convert the best move to a one-hot encoded vector
 function oneHotEncodeMove($move, $numClasses = 9) {
     $oneHot = array_fill(0, $numClasses, 0);
-    $oneHot[$move] = 1/2;
+    $oneHot[$move] = 1;
     return $oneHot;
 }
 
@@ -18,7 +25,7 @@ function loadDataset($filename) {
             $state = array_map('intval', explode(',', $state));
             $move = intval($move);
 
-            $X[] = $state; // No normalization
+            $X[] = normalizeBoardState($state);
             $y[] = oneHotEncodeMove($move);
         }
         fclose($file);
@@ -33,8 +40,8 @@ function loadDataset($filename) {
 list($X, $y) = loadDataset('tic_tac_toe_dataset.txt');
 
 // Print sample data to verify
-echo "Sample board state and one-hot encoded move:\n";
-print_r($X[0]);
-print_r($y[0]);
+echo "Sample normalized board state and one-hot encoded move:\n";
+print_r($X[500]);
+print_r($y[500]);
 
 ?>
