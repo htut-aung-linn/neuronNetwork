@@ -1,7 +1,7 @@
 <?php 
 include('loaddata.php');
     include('Network.php');
-    $myNet = new Network([9,9], [true,false]);
+    $myNet = new Network([9,20,9], [true,false,false]);
 /*
 for($j=0;$j<1;$j++){
     for($i=0;$i<count($X);$i++){
@@ -9,7 +9,7 @@ for($j=0;$j<1;$j++){
     }
     }*/
     
-for($a=0;$a<50;$a++){
+for($a=0;$a<10;$a++){
     for($b=0;$b<count($X);$b++){
         $myNet ->train($X[$b],$y[$b],0.3);
     }
