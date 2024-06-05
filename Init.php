@@ -9,9 +9,9 @@ for($j=0;$j<1;$j++){
     }
     }*/
     
-for($a=0;$a<1;$a++){
+for($a=0;$a<1500;$a++){
     for($b=0;$b<count($X);$b++){
-        $myNet ->train($X[$b],$y[$b],0.3);
+        $myNet ->train($X[$b],$y[$b],0.001);
     }
 }
 var_dump($y[100]);
