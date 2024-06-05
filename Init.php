@@ -8,14 +8,14 @@ for($j=0;$j<1;$j++){
         $myNet ->train($X[$i],$y[$i],0.1);
     }
     }*/
-    $myNet ->forward($X[5]);
-    $myNet->print();
-for($a=0;$a<1;$a++){
+    
+for($a=0;$a<50;$a++){
     for($b=0;$b<count($X);$b++){
-        $myNet ->train($X[$b],$y[$b],0.1);
+        $myNet ->train($X[$b],$y[$b],0.3);
     }
 }
-$myNet ->forward($X[5]);
+var_dump($y[100]);
+$myNet ->forward($X[100]);
     $myNet->print();
     $filename = 'data.txt';
     // The content to write to the file
