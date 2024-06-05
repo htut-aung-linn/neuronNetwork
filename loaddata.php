@@ -22,11 +22,13 @@ function loadDataset($filename) {
     if ($file) {
         while (($line = fgets($file)) !== false) {
             list($state, $move) = explode(' -> ', trim($line));
-            $state = array_map('intval', explode(',', $state));
+            if($move>-1){
+                $state = array_map('intval', explode(',', $state));
             $move = intval($move);
 
             $X[] = normalizeBoardState($state);
             $y[] = oneHotEncodeMove($move);
+            }
         }
         fclose($file);
     } else {
