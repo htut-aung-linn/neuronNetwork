@@ -10,8 +10,10 @@ for($j=0;$j<1;$j++){
     }*/
     $myNet ->forward($X[5]);
     $myNet->print();
-for($a=0;$a<10000;$a++){
-     $myNet ->train($X[5],$y[5],0.1);
+for($a=0;$a<1;$a++){
+    for($b=0;$b<count($X);$b++){
+        $myNet ->train($X[$b],$y[$b],0.1);
+    }
 }
 $myNet ->forward($X[5]);
     $myNet->print();
