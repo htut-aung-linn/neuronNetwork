@@ -11,9 +11,8 @@ for($j=0;$j<1;$j++){
     $myNet ->forward($X[5]);
     $myNet->print();
 for($j=0;$j<1;$j++){
-    for($i=0;$i<count($X);$i++){
-        $myNet ->train($X[$i],$y[$i],0.1);
-    }}
+     $myNet ->train([0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0],0.1);
+}
     $filename = 'data.txt';
     // The content to write to the file
     $content = $myNet->getWeight();
