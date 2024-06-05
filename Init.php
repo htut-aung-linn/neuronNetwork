@@ -1,7 +1,7 @@
 <?php 
 include('loaddata.php');
     include('Network.php');
-    $myNet = new Network([9,20,9], [true,false,false]);
+    $myNet = new Network([9,50,9], [true,false,false]);
 /*
 for($j=0;$j<1;$j++){
     for($i=0;$i<count($X);$i++){
@@ -9,14 +9,14 @@ for($j=0;$j<1;$j++){
     }
     }*/
     
-for($a=0;$a<10;$a++){
+for($a=0;$a<1;$a++){
     for($b=0;$b<count($X);$b++){
         $myNet ->train($X[$b],$y[$b],0.3);
     }
 }
 var_dump($y[100]);
-$myNet ->forward($X[100]);
-    $myNet->print();
+//$myNet ->forward($X[100]);
+   // $myNet->print();
     $filename = 'data.txt';
     // The content to write to the file
     $content = $myNet->getWeight();
