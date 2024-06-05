@@ -13,6 +13,8 @@ for($j=0;$j<1;$j++){
 for($a=0;$a<10000;$a++){
      $myNet ->train($X[5],$y[5],0.1);
 }
+$myNet ->forward($X[5]);
+    $myNet->print();
     $filename = 'data.txt';
     // The content to write to the file
     $content = $myNet->getWeight();
