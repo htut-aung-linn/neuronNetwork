@@ -3,7 +3,7 @@
 // Function to normalize the board state
 function normalizeBoardState($boardState) {
     return array_map(function($val) {
-        return $val / 2.0;
+        return $val ;
     }, $boardState);
 }
 
